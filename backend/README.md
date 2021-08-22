@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* custome routes follow this link ----> https://stackoverflow.com/questions/2634964/how-to-add-a-custom-restful-route-to-a-rails-app
