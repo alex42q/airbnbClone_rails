@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-* custome routes follow this link ----> https://stackoverflow.com/questions/2634964/how-to-add-a-custom-restful-route-to-a-rails-app
+* custome routes follow this link ---->       # get '/user/:id', to: "users#new" example

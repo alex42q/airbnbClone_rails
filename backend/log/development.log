@@ -732,3 +732,157 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.8ms | Allocations: 7302)
 
 
+Started GET "/" for 127.0.0.1 at 2021-08-23 15:31:45 +0300
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.6ms | Allocations: 407)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 3470)
+
+
+Started GET "/api/v1/user" for 127.0.0.1 at 2021-08-23 15:33:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/user"):
+  
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-08-23 15:33:15 +0300
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.5ms | Allocations: 5645)
+
+
+Started GET "/" for 127.0.0.1 at 2021-08-23 15:35:20 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.0ms | Allocations: 180)
+Completed 200 OK in 4ms (Views: 3.5ms | Allocations: 794)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2021-08-23 15:37:39 +0300
+Processing by Api::V1::UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.6ms | Allocations: 5285)
+
+
+Started GET "/api/v1/user" for 127.0.0.1 at 2021-08-23 15:37:42 +0300
+Processing by Api::V1::UsersController#show as HTML
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 704)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/api/v1/users_controller.rb:11:in `show'
+Started GET "/api/v1/user/1" for 127.0.0.1 at 2021-08-23 15:37:46 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/user/1"):
+  
+Started GET "/api/v1/user/10" for 127.0.0.1 at 2021-08-23 15:37:49 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/user/10"):
+  
+Started GET "/api/v1/user/10" for 127.0.0.1 at 2021-08-23 15:37:56 +0300
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 5178)
+
+
+Started GET "/api/v1/user/10" for 127.0.0.1 at 2021-08-23 15:38:00 +0300
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 601)
+
+
+Started GET "/api/v1/user/10" for 127.0.0.1 at 2021-08-23 15:39:09 +0300
+Processing by Api::V1::UsersController#new as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `new'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `new'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 5108)
+
+
+Started GET "/api/v1/user/10" for 127.0.0.1 at 2021-08-23 15:39:17 +0300
+Processing by Api::V1::UsersController#new as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `new'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 600)
+
+
+Started GET "/api/v1/users/10" for 127.0.0.1 at 2021-08-23 15:39:20 +0300
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 612)
+
+
+Started GET "/api/v1/users/10" for 127.0.0.1 at 2021-08-23 15:39:31 +0300
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 5097)
+
+
+Started GET "/api/v1/user/10" for 127.0.0.1 at 2021-08-23 15:39:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/user/10"):
+  
+Started GET "/api/v1/test/10" for 127.0.0.1 at 2021-08-23 15:39:38 +0300
+Processing by Api::V1::UsersController#new as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16:in `new'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 599)
+
+
+Started GET "/api/v1/test/10" for 127.0.0.1 at 2021-08-23 15:44:49 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/test/10"):
+  
+Started GET "/api/v1/users/10" for 127.0.0.1 at 2021-08-23 15:44:54 +0300
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 5871)
+
+
+Started GET "/api/v1/users/10" for 127.0.0.1 at 2021-08-23 15:51:41 +0300
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | Allocations: 124)
+
+
+Started GET "/api/v1/users/10" for 127.0.0.1 at 2021-08-23 16:03:26 +0300
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 100)
+
+
+Started GET "/api/v1/users/10" for 127.0.0.1 at 2021-08-23 16:07:25 +0300
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | Allocations: 98)
+
+
