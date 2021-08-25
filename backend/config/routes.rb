@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       get '/todos/:id', to: 'todos#showOneTodo'
       put '/todos/:id', to: 'todos#updateTodo'
       delete '/todos/:id', to: 'todos#deleteTodo'
-      get '/user/register', to: 'user#register'
+      post '/user/register', to: 'user#register'
+      post '/user/login', to: 'user#login'
     end
   end
 end

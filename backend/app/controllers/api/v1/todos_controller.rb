@@ -1,6 +1,7 @@
 class Api::V1::TodosController < ApplicationController
-
+    before_action :authorized
     def create
+        
         @todos = Todo.new(todos_params)
         if @todos.save
             render json: @todos, status: 201

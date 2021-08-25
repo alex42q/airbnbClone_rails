@@ -12,6 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2021_08_25_130906) do
 
+  create_table "admins", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "email"
+    t.string "password"
+    t.string "salt"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "allusers", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
