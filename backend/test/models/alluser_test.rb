@@ -1,6 +1,6 @@
 require "test_helper"
 
-class TodoTest < ActiveSupport::TestCase
+class AlluserTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

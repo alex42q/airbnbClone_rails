@@ -1,8 +1,8 @@
 require "test_helper"
 
-class TodoControllerTest < ActionDispatch::IntegrationTest
+class UserControllerTest < ActionDispatch::IntegrationTest
   test "should get api/v1" do
-    get todo_api/v1_url
+    get user_api/v1_url
     assert_response :success
   end
 end
