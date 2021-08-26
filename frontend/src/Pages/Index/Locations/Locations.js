@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import "./Locations.css"
 import axios from "axios"
+import ContainerGridFourColumns from '../../../Components/containerGridFourColumns'
 
 export default function Locations() {
     const [locations, getAllLocations] = useState([])
@@ -23,13 +24,8 @@ export default function Locations() {
             </div>
             <div className='grid grid-cols-4 gap-4'>
                 {locations.map((items)=>{
-                    return(<div id={items.id} key={items.id} className='flex'>
-                        <div>
-                            <img className='locImages' src={items.image}></img>
-                        </div>
-                        <div className='text-center justify-center'>
-                            <h5 className='text-center justify-center pl-1'>{items.name}</h5>
-                        </div>
+                    return(<div id={items.id} key={items.id}>
+                        <ContainerGridFourColumns image={items.image} name={items.name}/>
                     </div>)
                 })}
             </div>

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios"
+import ContainerGridFourColumnsBigImages from '../../../Components/ContainerGridFourColumnsBigImages'
 
 export default function LeavePantou() {
     const [leavePatnou, getAllLeavePantou] = useState([])
@@ -21,12 +22,7 @@ export default function LeavePantou() {
             <div className='grid grid-cols-4 gap-4'>
             {leavePatnou.map((items)=>{
                     return(<div id={items.id} key={items.id}>
-                        <div>
-                            <img className='leaveImages' src={items.image}></img>
-                        </div>
-                        <div className='text-center justify-center'>
-                            <h5 className='text-center justify-center pl-1'>{items.title}</h5>
-                        </div>
+                        <ContainerGridFourColumnsBigImages title={items.title} image={items.image} />
                     </div>)
                 })}
             </div>
