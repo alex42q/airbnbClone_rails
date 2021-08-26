@@ -1,0 +1,19 @@
+.header{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg");
+    background-size: cover;
+  
+    height: 90vh;
+    max-height: auto;
+}
+
+.input{
+    padding: 14px 32px;
+}
+
+.kuklos{
+    background-color: #FF385C;
+}
+
+.eucolor{
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgb(111, 1, 156) 0%, rgb(198, 1, 126) 135.12%) repeat scroll 0% 0% padding-box text ;
+}

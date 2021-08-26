@@ -9,6 +9,10 @@ Rails.application.routes.draw do
       delete '/todos/:id', to: 'todos#deleteTodo'
       post '/user/register', to: 'user#register'
       post '/user/login', to: 'user#login'
+      post '/locations/create', to: 'locations#createLocation'
+      get '/locations', to: 'locations#showLocations'
+      post '/leavepantou/create', to: 'leavepantou#createNewLeave'
+      get '/leavepantou', to: "leavepantou#showLeaves"
     end
   end
 end

@@ -1,6 +1,6 @@
 require "test_helper"
 
-class Api::V1::AuthControllerTest < ActionDispatch::IntegrationTest
+class LeavepantouTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

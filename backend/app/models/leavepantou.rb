@@ -1,0 +1,2 @@
+class Leavepantou < ApplicationRecord
+end

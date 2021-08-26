@@ -1,4 +1,5 @@
 require 'bcrypt'
+require 'sqlite3'
 
 class Api::V1::UserController < ApplicationController
 
@@ -6,10 +7,10 @@ class Api::V1::UserController < ApplicationController
     def register
         @user = Alluser.new(user_params)
         password_salt = BCrypt::Engine.generate_salt
-        password_hash = BCrypt::Engine.hash_secret(@user.password, password_salt)
+        password_hash = BCrypt::Engine.hash_secret(@user.password_digest, password_salt)
 
         if @user.save
-            @user.password = password_hash
+            @user.password_digest = password_hash
             @user.salt = password_salt
             @user.save
             render json: @user, status: 201
@@ -19,16 +20,13 @@ class Api::V1::UserController < ApplicationController
     end
 
     def login
-        @user = Alluser.find_by(email: params[:email])
-    password_salt = BCrypt::Engine.generate_salt
-    password_hash = BCrypt::Engine.hash_secret(user_pass, password_salt)
-    puts @user.email
-    puts @user.password
-        if @user && @user.authenticate(@user.password)
-            token = encode_token({user_id: @user.id})
+        user = Alluser.find_by(username: params[:username])
+        if user.username && user.authenticate(params[:password_digest])
+            token = encode_token({user_id: user.id})
+            session[:user_id] = user.id
             render json: {pass:"true", token:token}
         else
-            render json: {nopass:"false"}   
+            render json:{error:"error"}
         end
     end
 
@@ -36,14 +34,14 @@ class Api::V1::UserController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:firstname, :lastname, :email, :password, :salt, :personaldetails, :homes)
+        params.require(:user).permit(:firstname, :lastname, :username, :password_digest, :salt, :personaldetails, :homes)
     end
 
     def user_pass
-        params.require(:user).permit(:password)
+        params.require(:user).permit(:password_digest)
     end 
 
     def user_email
-        params.require(:user).permit(:email)
+        params.require(:user).permit(:username)
     end 
 end

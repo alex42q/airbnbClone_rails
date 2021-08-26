@@ -3,8 +3,8 @@ class CreateAllusers < ActiveRecord::Migration[6.1]
     create_table :allusers do |t|
       t.string :firstname
       t.string :lastname
-      t.string :email
-      t.string :password
+      t.string :username
+      t.string :password_digest
       t.string :salt
       t.text :personaldetails
       t.text :homes
