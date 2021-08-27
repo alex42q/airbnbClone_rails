@@ -1,0 +1,2 @@
+class Katal < ApplicationRecord
+end

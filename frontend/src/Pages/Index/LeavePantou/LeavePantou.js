@@ -19,7 +19,7 @@ export default function LeavePantou() {
             <div>
                 <h2 className='text-xl'>Ζήστε παντού</h2>
             </div>
-            <div className='grid grid-cols-4 gap-4'>
+            <div className='lg:grid grid-cols-4 gap-4 sm:grid grid-cols-1'>
             {leavePatnou.map((items)=>{
                     return(<div id={items.id} key={items.id}>
                         <ContainerGridFourColumnsBigImages title={items.title} image={items.image} />

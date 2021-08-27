@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       get '/locations', to: 'locations#showLocations'
       post '/leavepantou/create', to: 'leavepantou#createNewLeave'
       get '/leavepantou', to: "leavepantou#showLeaves"
+      post '/katalima/create', to: "katalimata#createNewKatalima"
+      get '/katalima/:locationId', to: "katalimata#showKatalsByLocation"
     end
   end
 end

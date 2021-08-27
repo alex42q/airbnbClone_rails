@@ -22,7 +22,7 @@ export default function Locations() {
             <div>
                 <h2 className='text-xl'>Εξερευνήστε κοντινές περιοχές</h2>
             </div>
-            <div className='grid grid-cols-4 gap-4'>
+            <div className='grid grid-cols-1 gap-4  md:grid-cols-2 xl:grid-cols-4'>
                 {locations.map((items)=>{
                     return(<div id={items.id} key={items.id}>
                         <ContainerGridFourColumns image={items.image} name={items.name}/>
